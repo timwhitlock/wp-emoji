@@ -1,0 +1,198 @@
+/**
+ * Phantom Emoji theme
+ */
+
+
+.emojified .emoji {
+    display: none;
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;
+    font-size: 1px;
+    background-repeat: no-repeat; 
+    overflow: hidden;
+    /* 32 pixels by default */
+    background-image: url(../img/emoji-phantom-32.tiny.png);
+    padding: 0 0 0 33px;
+    height: 33px;
+}
+
+/* 64px override */
+h1 .emojified .emoji,
+.emoji-64 .emojified .emoji {
+    background-image: url(../img/emoji-phantom-64.tiny.png);
+    padding: 0 0 0 65px;
+    height: 65px;
+}
+
+/* 25px override */
+small .emojified .emoji,
+.emoji-25 .emojified .emoji {
+    background-image: url(../img/emoji-phantom-25.tiny.png);
+    padding: 0 0 0 26px;
+    height: 26px;
+}
+
+
+
+
+/* sprite */
+.emoji-1f300 { background-position: 7.701422% 0; }
+.emoji-1f308 { background-position: 15.402844% 0; }
+.emoji-1f30c { background-position: 23.104265% 0; }
+.emoji-1f311 { background-position: 30.805687% 0; }
+.emoji-1f313 { background-position: 38.507109% 0; }
+.emoji-1f314 { background-position: 46.208531% 0; }
+.emoji-1f315 { background-position: 53.909953% 0; }
+.emoji-1f317 { background-position: 61.611374% 0; }
+.emoji-1f319 { background-position: 69.312796% 0; }
+.emoji-1f31b { background-position: 77.014218% 0; }
+.emoji-1f31f { background-position: 84.715640% 0; }
+.emoji-1f320 { background-position: 92.417062% 0; }
+.emoji-1f335 { background-position: 100.118483% 0; }
+.emoji-1f34a { background-position: 0 9.103641%; }
+.emoji-1f354 { background-position: 7.701422% 9.103641%; }
+.emoji-1f355 { background-position: 15.402844% 9.103641%; }
+.emoji-1f359 { background-position: 23.104265% 9.103641%; }
+.emoji-1f365 { background-position: 30.805687% 9.103641%; }
+.emoji-1f370 { background-position: 38.507109% 9.103641%; }
+.emoji-1f371 { background-position: 46.208531% 9.103641%; }
+.emoji-1f379 { background-position: 53.909953% 9.103641%; }
+.emoji-1f37a { background-position: 61.611374% 9.103641%; }
+.emoji-1f383 { background-position: 69.312796% 9.103641%; }
+.emoji-1f3a4 { background-position: 77.014218% 9.103641%; }
+.emoji-1f3ae { background-position: 84.715640% 9.103641%; }
+.emoji-1f3b8 { background-position: 92.417062% 9.103641%; }
+.emoji-1f3be { background-position: 100.118483% 9.103641%; }
+.emoji-1f3c2 { background-position: 0 18.207283%; }
+.emoji-1f3e9 { background-position: 7.701422% 18.207283%; }
+.emoji-1f40c { background-position: 15.402844% 18.207283%; }
+.emoji-1f40d { background-position: 23.104265% 18.207283%; }
+.emoji-1f414 { background-position: 30.805687% 18.207283%; }
+.emoji-1f417 { background-position: 38.507109% 18.207283%; }
+.emoji-1f418 { background-position: 46.208531% 18.207283%; }
+.emoji-1f419 { background-position: 53.909953% 18.207283%; }
+.emoji-1f421 { background-position: 61.611374% 18.207283%; }
+.emoji-1f423 { background-position: 69.312796% 18.207283%; }
+.emoji-1f427 { background-position: 77.014218% 18.207283%; }
+.emoji-1f428 { background-position: 84.715640% 18.207283%; }
+.emoji-1f42b { background-position: 92.417062% 18.207283%; }
+.emoji-1f431 { background-position: 100.118483% 18.207283%; }
+.emoji-1f433 { background-position: 0 27.310924%; }
+.emoji-1f434 { background-position: 7.701422% 27.310924%; }
+.emoji-1f436 { background-position: 15.402844% 27.310924%; }
+.emoji-1f438 { background-position: 23.104265% 27.310924%; }
+.emoji-1f43a { background-position: 30.805687% 27.310924%; }
+.emoji-1f43e { background-position: 38.507109% 27.310924%; }
+.emoji-1f44a { background-position: 46.208531% 27.310924%; }
+.emoji-1f44d { background-position: 53.909953% 27.310924%; }
+.emoji-1f46a { background-position: 61.611374% 27.310924%; }
+.emoji-1f46b { background-position: 69.312796% 27.310924%; }
+.emoji-1f46c { background-position: 77.014218% 27.310924%; }
+.emoji-1f46d { background-position: 84.715640% 27.310924%; }
+.emoji-1f478 { background-position: 92.417062% 27.310924%; }
+.emoji-1f47b { background-position: 100.118483% 27.310924%; }
+.emoji-1f47d { background-position: 0 36.414566%; }
+.emoji-1f480 { background-position: 7.701422% 36.414566%; }
+.emoji-1f483 { background-position: 15.402844% 36.414566%; }
+.emoji-1f48a { background-position: 23.104265% 36.414566%; }
+.emoji-1f491 { background-position: 30.805687% 36.414566%; }
+.emoji-1f4a9 { background-position: 38.507109% 36.414566%; }
+.emoji-1f4ac { background-position: 46.208531% 36.414566%; }
+.emoji-1f51e { background-position: 53.909953% 36.414566%; }
+.emoji-1f52b { background-position: 61.611374% 36.414566%; }
+.emoji-1f5fb { background-position: 69.312796% 36.414566%; }
+.emoji-1f600 { background-position: 77.014218% 36.414566%; }
+.emoji-1f601 { background-position: 84.715640% 36.414566%; }
+.emoji-1f602 { background-position: 92.417062% 36.414566%; }
+.emoji-1f603 { background-position: 100.118483% 36.414566%; }
+.emoji-1f604 { background-position: 0 45.518207%; }
+.emoji-1f605 { background-position: 7.701422% 45.518207%; }
+.emoji-1f606 { background-position: 15.402844% 45.518207%; }
+.emoji-1f609 { background-position: 23.104265% 45.518207%; }
+.emoji-1f60a { background-position: 30.805687% 45.518207%; }
+.emoji-1f60b { background-position: 38.507109% 45.518207%; }
+.emoji-1f60c { background-position: 46.208531% 45.518207%; }
+.emoji-1f60d { background-position: 53.909953% 45.518207%; }
+.emoji-1f60f { background-position: 61.611374% 45.518207%; }
+.emoji-1f611 { background-position: 69.312796% 45.518207%; }
+.emoji-1f612 { background-position: 77.014218% 45.518207%; }
+.emoji-1f613 { background-position: 84.715640% 45.518207%; }
+.emoji-1f614 { background-position: 92.417062% 45.518207%; }
+.emoji-1f615 { background-position: 100.118483% 45.518207%; }
+.emoji-1f617 { background-position: 0 54.621849%; }
+.emoji-1f618 { background-position: 7.701422% 54.621849%; }
+.emoji-1f619 { background-position: 15.402844% 54.621849%; }
+.emoji-1f61a { background-position: 23.104265% 54.621849%; }
+.emoji-1f61b { background-position: 30.805687% 54.621849%; }
+.emoji-1f61c { background-position: 38.507109% 54.621849%; }
+.emoji-1f61d { background-position: 46.208531% 54.621849%; }
+.emoji-1f61e { background-position: 53.909953% 54.621849%; }
+.emoji-1f61f { background-position: 61.611374% 54.621849%; }
+.emoji-1f620 { background-position: 69.312796% 54.621849%; }
+.emoji-1f621 { background-position: 77.014218% 54.621849%; }
+.emoji-1f622 { background-position: 84.715640% 54.621849%; }
+.emoji-1f623 { background-position: 92.417062% 54.621849%; }
+.emoji-1f624 { background-position: 100.118483% 54.621849%; }
+.emoji-1f625 { background-position: 0 63.725490%; }
+.emoji-1f626 { background-position: 7.701422% 63.725490%; }
+.emoji-1f627 { background-position: 15.402844% 63.725490%; }
+.emoji-1f628 { background-position: 23.104265% 63.725490%; }
+.emoji-1f629 { background-position: 30.805687% 63.725490%; }
+.emoji-1f62c { background-position: 38.507109% 63.725490%; }
+.emoji-1f62d { background-position: 46.208531% 63.725490%; }
+.emoji-1f62e { background-position: 53.909953% 63.725490%; }
+.emoji-1f62f { background-position: 61.611374% 63.725490%; }
+.emoji-1f630 { background-position: 69.312796% 63.725490%; }
+.emoji-1f632 { background-position: 77.014218% 63.725490%; }
+.emoji-1f633 { background-position: 84.715640% 63.725490%; }
+.emoji-1f634 { background-position: 92.417062% 63.725490%; }
+.emoji-1f635 { background-position: 100.118483% 63.725490%; }
+.emoji-1f637 { background-position: 0 72.829132%; }
+.emoji-1f638 { background-position: 7.701422% 72.829132%; }
+.emoji-1f639 { background-position: 15.402844% 72.829132%; }
+.emoji-1f63a { background-position: 23.104265% 72.829132%; }
+.emoji-1f63b { background-position: 30.805687% 72.829132%; }
+.emoji-1f63c { background-position: 38.507109% 72.829132%; }
+.emoji-1f63d { background-position: 46.208531% 72.829132%; }
+.emoji-1f63e { background-position: 53.909953% 72.829132%; }
+.emoji-1f63f { background-position: 61.611374% 72.829132%; }
+.emoji-1f640 { background-position: 69.312796% 72.829132%; }
+.emoji-1f645 { background-position: 77.014218% 72.829132%; }
+.emoji-1f646 { background-position: 84.715640% 72.829132%; }
+.emoji-1f647 { background-position: 92.417062% 72.829132%; }
+.emoji-1f648 { background-position: 100.118483% 72.829132%; }
+.emoji-1f649 { background-position: 0 81.932773%; }
+.emoji-1f64a { background-position: 7.701422% 81.932773%; }
+.emoji-1f64b { background-position: 15.402844% 81.932773%; }
+.emoji-1f64c { background-position: 23.104265% 81.932773%; }
+.emoji-1f64d { background-position: 30.805687% 81.932773%; }
+.emoji-1f64e { background-position: 38.507109% 81.932773%; }
+.emoji-1f64f { background-position: 46.208531% 81.932773%; }
+.emoji-1f68f { background-position: 53.909953% 81.932773%; }
+.emoji-1f697 { background-position: 61.611374% 81.932773%; }
+.emoji-1f699 { background-position: 69.312796% 81.932773%; }
+.emoji-1f6a2 { background-position: 77.014218% 81.932773%; }
+.emoji-1f6b9 { background-position: 84.715640% 81.932773%; }
+.emoji-2600 { background-position: 92.417062% 81.932773%; }
+.emoji-2601 { background-position: 100.118483% 81.932773%; }
+.emoji-2615 { background-position: 0 91.036415%; }
+.emoji-263a { background-position: 7.701422% 91.036415%; }
+.emoji-2648 { background-position: 15.402844% 91.036415%; }
+.emoji-2649 { background-position: 23.104265% 91.036415%; }
+.emoji-264a { background-position: 30.805687% 91.036415%; }
+.emoji-264b { background-position: 38.507109% 91.036415%; }
+.emoji-264c { background-position: 46.208531% 91.036415%; }
+.emoji-264d { background-position: 53.909953% 91.036415%; }
+.emoji-264e { background-position: 61.611374% 91.036415%; }
+.emoji-264f { background-position: 69.312796% 91.036415%; }
+.emoji-2650 { background-position: 77.014218% 91.036415%; }
+.emoji-2651 { background-position: 84.715640% 91.036415%; }
+.emoji-2652 { background-position: 92.417062% 91.036415%; }
+.emoji-2653 { background-position: 100.118483% 91.036415%; }
+.emoji-267f { background-position: 0 100.140056%; }
+.emoji-2693 { background-position: 7.701422% 100.140056%; }
+.emoji-26a1 { background-position: 15.402844% 100.140056%; }
+.emoji-270c { background-position: 23.104265% 100.140056%; }
+.emoji-2764 { background-position: 30.805687% 100.140056%; }
+.emoji-3299 { background-position: 38.507109% 100.140056%; }
