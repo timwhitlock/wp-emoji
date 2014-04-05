@@ -3,7 +3,7 @@ Contributors: timwhitlock
 Donate link: http://timwhitlock.info/donate-to-a-project/
 Tags: emoji, emoticons, icons, android, phantom, shortcode, unicode
 Requires at least: 3.5.1
-Tested up to: 3.5.1
+Tested up to: 3.8.1
 Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -89,6 +89,7 @@ No. I'm working on them. Feel free to ask a question in the Support tab, or on [
 = 1.0.7 =
 * Only loading JavaScript when needed
 * Fixed symlinked base directory bug
+* Requesting TinMCE plugin via Wordpress ajax hook
 
 = 1.0.6 =
 * Added latest Phantom emoji
