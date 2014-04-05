@@ -100,7 +100,6 @@ function os_emoji_admin_render_form( array $conf ){
 
 
 
-
 /**
  * Render full admin page
  */ 
@@ -127,7 +126,6 @@ function os_emoji_admin_render_page(){
 
 
 
-
 /**
  * Build clean base URL for admin settings page
  * @return string
@@ -143,10 +141,7 @@ function os_emoji_admin_base_uri(){
 }
 
 
-
  
-
-
 /**
  * admin_init action
  */
@@ -161,17 +156,34 @@ function os_emoji_admin_init(){
     //if ( get_user_option('rich_editing') == 'true') {
     add_filter("mce_external_plugins", 'os_emoji_filter_mce_external_plugins');
     add_filter('mce_buttons', 'os_emoji_filter_mce_buttons');
+    // force MCE plugin window through wordpress
+    if( defined('DOING_AJAX') && DOING_AJAX ){
+        add_filter('wp_ajax_os_emoji_mce', 'os_emoji_render_mce_plugin' );
+    }
 }
+
+
+
+/**
+ * Render TinyMCE plugin window
+ */
+function os_emoji_render_mce_plugin(){
+    include os_emoji_basedir('/mce/plugin.php');
+    exit(0);
+}
+
 
 
 /**
  * Add tinymce plugin
  */
 function os_emoji_filter_mce_external_plugins( $plugins ) {
-    $plugins['os_emoji'] = os_emoji_baseurl().'/mce/plugin.min.js';
+    $suffix = WP_DEBUG ? '.js' : '.min.js';
+    $plugins['os_emoji'] = os_emoji_baseurl().'/mce/plugin'.$suffix;
     return $plugins;
 }
- 
+
+
 
 /**
  * Register button for tinymce plugin
@@ -191,15 +203,19 @@ function os_emoji_admin_enqueue_styles(){
     wp_enqueue_style( 'os-emoji-admin-css', $css );
 }
  
+ 
 
 /**
  * enqueue admin js
  */
 function os_emoji_admin_enqueue_scripts(){
     os_emoji_enqueue_scripts();
-    $js = os_emoji_baseurl().'/pub/js/admin.min.js';
-    wp_enqueue_script( 'os-emoji-admin-js', $js, array('jquery'), OS_EMOJI_VERSION, true );
+    $suffix = WP_DEBUG ? '.js' : '.min.js';
+    $script = os_emoji_baseurl().'/pub/js/admin'.$suffix;
+    $version = WP_DEBUG ? time() : OS_EMOJI_VERSION;
+    wp_enqueue_script( 'os-emoji-admin-js', $script, array('jquery'), $version, true );
 }
+
 
 
 /**

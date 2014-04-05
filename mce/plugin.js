@@ -4,16 +4,16 @@
 !function( window, tinymce, $ ){
 
     var pluginId   = 'os_emoji',
+        ajaxAction = (window.ajaxurl||'/wp-admin/admin-ajax.php')+'?action=os_emoji_mce',
         pluginName = 'Open Source Emoji';
 
     tinymce.create( 'tinymce.plugins.'+pluginId, {
         
         init : function( ed, jsRoot ) {
-
             // Register command for: tinyMCE.activeEditor.execCommand('os_emoji');
             ed.addCommand( pluginId, function() {
                 ed.windowManager.open({
-                    file : jsRoot+'/plugin.php',
+                    file : ajaxAction,
                     width : 800,
                     height : 500,
                     inline : 1
