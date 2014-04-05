@@ -17,10 +17,17 @@ define( 'OS_EMOJI_VERSION', '1.0.6' );
 /**
  * Get plugin local base directory in case __DIR__ isn't available (php<5.3)
  */
-function os_emoji_basedir(){
+function os_emoji_basedir( $path = '' ){
     static $dir;
-    isset($dir) or $dir = dirname(__FILE__);
-    return $dir;    
+    if( ! isset($dir) ){
+        $dir = dirname(__FILE__);
+        if( 0 !== strpos( $dir, WP_PLUGIN_DIR ) ){
+            // something along this path has been symlinked into the document path.
+            // this fix assumes we've not been linked into a sub-directory of plugins:
+            $dir = WP_PLUGIN_DIR.'/'.basename($dir);
+        }
+    }
+    return $dir.$path;    
 }    
 
 
@@ -31,13 +38,7 @@ function os_emoji_basedir(){
 function os_emoji_baseurl(){
     static $url;
     if( ! isset($url) ){
-        $here = __FILE__;
-        if( 0 !== strpos( WP_CONTENT_DIR, $here ) ){
-            // something along this path has been symlinked into the document path
-            // temporary measure assumes name of plugin folder is unchanged.
-            $here = WP_CONTENT_DIR.'/plugins/open-source-emoji/emoji.php';
-        }
-        $url = plugins_url( '', $here );
+        $url = plugins_url( '', os_emoji_basedir('/emoji.php') );
     }
     return $url;
 }
