@@ -35,12 +35,12 @@ function os_emoji_basedir( $path = '' ){
 /**
  * Get plugin base URL path.
  */
-function os_emoji_baseurl(){
+function os_emoji_baseurl( $path = '' ){
     static $url;
     if( ! isset($url) ){
         $url = plugins_url( '', os_emoji_basedir('/emoji.php') );
     }
-    return $url;
+    return $url.$path;
 }
 
 
@@ -113,7 +113,17 @@ function os_emoji_string( $name ){
  * Convert [emoji ..] short code into HTML
  */
 function os_emoji_shortcode( $atts ){
-    return os_emoji_string( implode( ' ', $atts ) );
+    $names = implode( ' ', $atts );
+    if( $content = os_emoji_string( $names ) ){
+        static $hooked;
+        if( ! isset($hooked) ){
+            $hooked = os_emoji_enqueue_scripts();
+        }
+    }
+    else {
+        $content = '<!-- invalid [emoji '.$names.'] -->';
+    }
+    return $content;
 }
 
 add_shortcode( 'emoji', 'os_emoji_shortcode' );
@@ -122,19 +132,23 @@ add_shortcode( 'emoji', 'os_emoji_shortcode' );
 
 
 /**
- * Add JavaScript API to all pages
+ * Add JavaScript API to current page footer
+ * @return string current emoji theme
  */
 function os_emoji_enqueue_scripts(){
-    static $hook;
+    static $hook, $vers, $script;
     if( isset($hook) ){
         wp_dequeue_script($hook); // <- permits theme change
     }
     else {
         $hook = 'os-emoji';
+        $vers = WP_DEBUG ? time() : OS_EMOJI_VERSION;
+        $script = os_emoji_baseurl('/pub/js/emoji.'.( WP_DEBUG ? 'min.js' : 'js' ) );
     }
     extract( _os_emoji_config() );
-    $js = os_emoji_baseurl().'/pub/js/emoji.min.js?theme='.apply_filters( 'emoji_theme', $theme );
-    wp_enqueue_script( $hook, $js, array(), OS_EMOJI_VERSION, true );    
+    $theme = apply_filters( 'emoji_theme', $theme );
+    wp_enqueue_script( $hook, $script.'?theme='.$theme, array(), $vers, true );
+    return $theme;
 }
 
 
@@ -145,7 +159,4 @@ function os_emoji_enqueue_scripts(){
  */
 if( is_admin() ){
     os_emoji_include('admin');
-}
-else {
-    add_action( 'wp_enqueue_scripts', 'os_emoji_enqueue_scripts' );
 }
