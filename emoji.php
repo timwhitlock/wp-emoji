@@ -24,7 +24,12 @@ function os_emoji_basedir( $path = '' ){
         if( 0 !== strpos( $dir, WP_PLUGIN_DIR ) ){
             // something along this path has been symlinked into the document path.
             // this fix assumes we've not been linked into a sub-directory of plugins:
-            $dir = WP_PLUGIN_DIR.'/'.basename($dir);
+            foreach( array('open-source-emoji', 'wp-emoji', basename($dir) ) as $name ){
+                $dir = WP_PLUGIN_DIR.'/'.$name;
+                if( is_dir($dir) ){
+                    break;
+                }
+            }
         }
     }
     return $dir.$path;    

@@ -80,11 +80,15 @@ No. I'm working on them. Feel free to ask a question in the Support tab, or on [
 
 == Upgrade Notice ==
 
-= 1.0.6 =
-* Added latest Phantom emoji
+= 1.0.7 =
+* Various bug fixes and improvements
 
 
 == Changelog ==
+
+= 1.0.7 =
+* Only loading JavaScript when needed
+* Fixed symlinked base directory bug
 
 = 1.0.6 =
 * Added latest Phantom emoji
