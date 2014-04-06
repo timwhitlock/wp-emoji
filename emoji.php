@@ -41,11 +41,12 @@ function os_emoji_basedir( $path = '' ){
  * Get plugin base URL path.
  */
 function os_emoji_baseurl( $path = '' ){
-    static $url;
+    static $url, $plugin;
     if( ! isset($url) ){
-        $url = plugins_url( '', os_emoji_basedir('/emoji.php') );
+        $plugin = os_emoji_basedir('/emoji.php');
+        $url = plugins_url( '', $plugin );
     }
-    return $url.$path;
+    return apply_filters( 'plugins_url', $url.$path, $path, $plugin );
 }
 
 
