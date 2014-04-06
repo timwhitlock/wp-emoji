@@ -199,8 +199,9 @@ function os_emoji_filter_mce_buttons( $buttons ) {
  * enqueue admin css
  */
 function os_emoji_admin_enqueue_styles(){
-    $css = os_emoji_baseurl().'/pub/css/emoji-admin.css';
-    wp_enqueue_style( 'os-emoji-admin-css', $css );
+    $css = os_emoji_baseurl('/pub/css/emoji-admin.css');
+    $version = WP_DEBUG ? time() : OS_EMOJI_VERSION;
+    wp_enqueue_style( 'os-emoji-admin', $css, array(), $version );
 }
  
  
@@ -211,7 +212,7 @@ function os_emoji_admin_enqueue_styles(){
 function os_emoji_admin_enqueue_scripts(){
     os_emoji_enqueue_scripts();
     $suffix = WP_DEBUG ? '.js' : '.min.js';
-    $script = os_emoji_baseurl().'/pub/js/admin'.$suffix;
+    $script = os_emoji_baseurl( '/pub/js/admin'.$suffix );
     $version = WP_DEBUG ? time() : OS_EMOJI_VERSION;
     wp_enqueue_script( 'os-emoji-admin-js', $script, array('jquery'), $version, true );
 }
