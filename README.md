@@ -1,5 +1,10 @@
 # Open Source Emoji Wordpress Plugin
 
+## NO LONGER MAINTAINED
+
+This was a mirror of the [open-source-emoji](https://wordpress.org/plugins/open-source-emoji/) plugin, which is now **closed**. 
+It remains here for posterity only.
+
 ## Emoji support for your blog with no copyright problems.
 
 Gitified version of the Open Source Emoji plugin published in the official Wordpress plugin directory:  
